@@ -1,2 +1,2 @@
 # test-program
-测试 python
+test python 
