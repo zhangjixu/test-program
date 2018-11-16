@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 MYSQL_ALPHACASH_ADMIN_USER = 'root'
 MYSQL_ALPHACASH_ADMIN_PWD = 'root'

@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 from mysql.connector import pooling
 from mysql.connector import MySQLConnection

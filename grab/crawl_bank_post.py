@@ -1,11 +1,10 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
 import requests
 import time
 import pymongo
 from conf import mongo_conf
-
 
 # 日期格式化
 DATETIME_FORMAT = '%Y-%m-%d'
@@ -49,10 +48,6 @@ def get_page_no(start_date, end_date, pjname):
     content = res.text
     soup = BeautifulSoup(content, 'html.parser')
     script_list = soup.find_all('script', attrs={'language': 'JavaScript'})
-    # print script_list[3].get_text()
-    # for script in script_list:
-    #     print '============'
-    #     print script.get_text()
 
     str_list = script_list[3]
     string = str_list.get_text().split('\n')
@@ -84,6 +79,7 @@ def parse_html(content):
             str = tr.get_text().split('\n')[1:]
             # 把序列转换为元祖
             tup = tuple(str)
+            print tup
             # 把元祖保存到序列中
             tuple_list.append(tup)
 

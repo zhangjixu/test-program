@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 import itertools
 import sys
@@ -50,10 +50,9 @@ def test_draw1():
     x = np.linspace(-2, 8, 10)
     y1 = -x + 1
     y2 = x
-    plt.figure()
-    plt.subplot(1, 2, 1)
+
     plt.plot(x, y1)
-    plt.subplot(1, 2, 2)
+
     plt.plot(x, y2)
     plt.show()
 

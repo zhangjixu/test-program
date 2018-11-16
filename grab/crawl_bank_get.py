@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
 import requests
@@ -134,8 +134,11 @@ def crawl_bank():
         else:
             url = URL + 'index_' + str(i) + '.html'
 
+        # 伪装浏览器
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
         # 发送 http get 请求
-        res = requests.get(url)
+        res = requests.get(url, headers=headers)
         res.encoding = 'utf-8'
         # 获取 http 请求响应数据
         content = res.text
@@ -215,5 +218,6 @@ if __name__ == '__main__':
         crawl_bank()
         # 发送邮件
         send_email(subject, content, receiver)
+        print 'success'
         # 每隔 12 分钟后重新抓取一次
         time.sleep(period)

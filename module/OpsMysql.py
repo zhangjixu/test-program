@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 from module.MySQLUtils import MySQLUtils
 from conf import mysql_conf as cfg
@@ -41,4 +41,21 @@ class OpsMysql(object):
                         database=cfg.MYSQL_ALPHACASH_DB) as cnx:
             cur = cnx.cursor(dictionary=True)
             cur.execute(sql, value)
+            cnx.commit()
+
+    def inset_many(self, sql, value=None):
+        '''
+        用于批量保存数据
+        Args:
+            sql: 执行的 sql 语句
+            value: 语句中的参数列表
+
+        Returns:
+
+        '''
+        with MySQLUtils(host=cfg.MYSQL_ALPHACASH_HOST, port=cfg.MYSQL_ALPHACASH_PORT,
+                        user=cfg.MYSQL_ALPHACASH_ADMIN_USER, password=cfg.MYSQL_ALPHACASH_ADMIN_PWD,
+                        database=cfg.MYSQL_ALPHACASH_DB) as cnx:
+            cur = cnx.cursor(dictionary=True)
+            cur.executemany(sql, value)
             cnx.commit()

@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 import requests
 from bs4 import BeautifulSoup
@@ -66,7 +66,7 @@ def crawl_bank_get():
 
 def crawl_bank_post():
     url = 'http://srh.bankofchina.com/search/whpj/search.jsp'
-    payload = {'erectDate': '2008-01-01', 'nothing': '', 'pjname': 1315}
+    payload = {'erectDate': '2018-11-11', 'nothing': '', 'pjname': 1315}
     # 构建 headers 信息
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     # 发送 http post 请求
