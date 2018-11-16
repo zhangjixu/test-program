@@ -22,11 +22,11 @@ class MongoUtils(object):
 
     def getMongo(self):
         '''
-        返回 mongo 的实例
+        返回 mongo 的实例 并设置读取策略为 secondaryPreferred 优先读取副节点，失败则从主节点读取。
         Returns:
 
         '''
-        client = pymongo.MongoClient(host=self._url)
+        client = pymongo.MongoClient(host=str(self._url), readPreference='secondaryPreferred')
         # 指定数据库
         db = client[self._database]
         collection = db[self._collection]

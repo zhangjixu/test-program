@@ -86,4 +86,4 @@ def save():
 
 
 if __name__ == '__main__':
-    query_sort()
+    query()
