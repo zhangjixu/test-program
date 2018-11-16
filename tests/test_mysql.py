@@ -5,10 +5,11 @@ from module.OpsMysql import OpsMysql
 
 def query():
     ops_mysql = OpsMysql()
-    sql = '''select * from test where id = %s and  name = %s '''
-    data = ops_mysql.query(sql, ('17', u'李四'))
+    sql = '''select * from test'''
+    data = ops_mysql.query(sql)
     for row in data:
-        print(row)
+        print type(row)
+        print(row['age'])
 
 
 def update():
@@ -26,4 +27,4 @@ def insert_many():
 
 
 if __name__ == '__main__':
-    insert_many()
+    query()

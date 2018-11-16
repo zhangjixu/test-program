@@ -6,7 +6,7 @@ pip install xlwt -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
 pip install pymongo -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
-pip install matplotlib -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip install matplotlib==2.2.3 -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
 pip install numpy -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
@@ -15,3 +15,4 @@ pip install scipy -i http://pypi.douban.com/simple --trusted-host pypi.douban.co
 pip install pystan -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
 pip install mysql-connector -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
